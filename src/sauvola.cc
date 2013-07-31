@@ -86,7 +86,7 @@ cv::Mat& optiSauvola(cv::Mat& inpImg, cv::Mat& resImg, int window, float k,
                       bool parallel)
 {
   if (parallel)
-    tbb::task_scheduler_init init();
+    tbb::task_scheduler_init init;
   else
     tbb::task_scheduler_init init(1);
 

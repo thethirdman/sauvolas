@@ -18,4 +18,9 @@ slow:
 	${CC} ${CFLAGS} ${LFLAGS} $(addprefix demo/, $@.cc)  sauvola.o -o $@
 
 clean:
-	rm -f sauvola.o opti para slow
+	rm -f sauvola.o opti para slow *.jpg
+
+bench:
+	time ./opti 0.05 20 example/huge.jpg opti.jpg
+	time ./para 0.05 20 example/huge.jpg para.jpg
+	time ./slow 0.05 20 example/huge.jpg slow.jpg
